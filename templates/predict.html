@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% block body %}
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/image.jpg') }} ')">
+    <div class="overlay"></div>
+    <div class="container" style="height: 200px">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+        
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+ <link href="{{url_for('static', filename = 'css/scrolling-nav.css')}}" rel="stylesheet">
+
+
+    
+    <div class="col-md-6">
+                <div class="new-area no-padding blank border m-4 p-3">
+                  
+  <h2 class="text-center">News Category Prediction</h2>
+  
+  <div class="card">
+      <div class="card-body">
+          <div class="row">
+             
+          </div>
+            <div class="card card-inner">
+                  <div class="card-body">
+                      <div class="row">
+                          <div class="col-md-2">
+                              <img src="https://image.ibb.co/jw55Ex/def_face.jpg" class="img img-rounded img-fluid"/>
+                              <p class="text-secondary text-center">Date</p>
+                          </div>
+                          <div class="col-md-10">
+                              <p class="p-4">
+                                  
+                                  <a class="btn text-white btn-success btn-md"></i> {{category}}</a>
+                                  
+                             </p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+
+      </div>
+  </div>
+              </div><!-- Widget Area -->
+            </div>
+        
+    
+
+
+{% endblock %}

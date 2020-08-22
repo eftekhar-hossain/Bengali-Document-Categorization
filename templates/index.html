@@ -1,0 +1,39 @@
+
+{% extends "layout.html" %}
+{% block body %}
+  <!-- Page Header -->
+     <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/image.jpg') }} ')">
+    <div class="overlay"></div>
+    <div class="container"  style="height: 400px">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h2>Bengali News Articles Categorization </h2>
+            <span class="subheading">An ML App</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+    
+    <div class="col-md-6">
+                <div class="widget-area no-padding blank">
+                <div class="status-upload">
+                  <form action="{{ url_for('predict')}}" method="post">
+                    <textarea placeholder="আপনার নিউজটি বাংলায় লিখুন !" name = 'news'></textarea>
+                    
+                    <button type="submit" class="btn btn-success green" value="predict"></i> Predict</button>
+                  </form>
+                </div><!-- Status Upload  -->
+              </div><!-- Widget Area -->
+            </div>
+        
+    </div>
+</div>
+  </div>
+
+{% endblock %}
