@@ -11,12 +11,11 @@
 - **Developement Envioronment :** Google Colab
 - **Python Version :** 3.7
 - **Framework and Packages :** Tensorflow 2.1.0 , Scikit-Learn, Pandas, Numpy, Matplotlib, Seaborn
--**Deployment Framework :** Flask 1.1.0
+- **Deployment Framework :** Flask 1.1.0
 
 ## Project Outline 
 - Data Preparation
 - Data Summary
-- Data Preparation for Model Building
 - Model Development
 - Model Evaluation
 
@@ -31,43 +30,32 @@ The taken dataset is a multiclass imbalanced dataset and consists of around **`0
 
 Data summary includes the information about number of documents, words and unique words have in each category class. Also, include the length distribution of the  news artices in the dataset.
 
-| ![national](/images/national.PNG) | ![international](/images/international.PNG) | ![politics](/images/politics.PNG) | ![sports](/images/sports.PNG) |![amusement](/images/amusement.PNG) |![it](/images/it.PNG) |
+| ![accident](/images/accident.PNG) | ![crime](/images/crime.PNG) | ![economics](/images/economics.PNG) | ![sports](/images/sports.PNG) |![politics](/images/politics.PNG) |![entertainment](/images/entertainment.PNG) |
 
 ![length distribution](/images/len_dist.PNG)
 
-**From this graphical information we can select the suitable  length of headlines that we have to use for making every headlines into a same length.**
-
-
-## Data Preparation for Model Building
-
-The text data are represented by a encoded sequence where the sequences are the vector of index number of the contains words in each headlines. The categories are also encoded into numeric values. After preparing the headlines and labels it looks as -
-![ecoded_sequence](/images/padded.PNG)  ![labels](/images/encoded_labels.PNG)
-
-For Model Evaluation the encoded headlines are splitted into **Train-Test-Validation Set**. The distribution has -
-
-![split](/images/train_test_split.PNG)
+**From this graphical information we can select the suitable  length of articles that we have to use for making every articles into a same length.**
 
 
 ## Model Development 
 
-The used model architecture consists of a **embedding layer(`input_length = 21, embedding_dim = 64`), GRU layer(`n_units = 64`), two dense layer (`n_units = 24, 6`), a dropout  and a softmax layer**. The Architecture looks like- 
+The used model architecture consists of a **embedding layer(`input_length = 300, embedding_dim = 128`), Conv layer(`128 , 5x5`), two bilstm layer(`nunits = 64`), two dense layer (`n_units = 28, 14`), and a softmax layer**. The Architecture looks like- 
 
 ![model](/images/model_architecture.PNG)
 
 ## Model Evaluation 
 
-In this simple model we have got **`81%`** validation accuracy which is not bad for such an multiclass imbalanced dataset. Besides Confusion Matrix and other evaluation measures have been taken to determine the effectiveness of the developed model. From the confusion matrix it is observed that the maximum number of misclassified headlines are fall in the caltegory of **`Natinal, International and Politics `** and it make sense because this categories headlines are kind of similar in words. The accuracy, precision, recall and f1-score result also demonstrate this issue. 
+In this devloped model we have got **`84%`** validation accuracy which is not bad for such an imbalanced dataset. Besides, Confusion Matrix and other evaluation measures have been taken to determine the effectiveness of the developed model. From the confusion matrix it is observed that the maximum number of misclassified headlines are fall in the caltegory of **`Education, Art and Politics `** and it make sense because this categories news are kind of similar in words. The accuracy, precision, recall and f1-score result also demonstrate this issue. 
+
+![training](/images/training_accuract.PNG)
 
 ![confusion](/images/confusion.PNG)
 
-![performance](/images/performance.PNG)
+![performance](/images/performance_table.PNG)
 
-**In conclusion, we have achieved a good accuracy of `84%` on this simple recurrent neural network for Bengali news headline categorization task. This accuray can be further improved by doing hyperparameter tunning and by employing more shophisticated network architecture with a large dataset.**
-
-
-
+**In conclusion, we have achieved a good accuracy of `84%` on this simple hybrid neural network for Bengali document categorization task. This accuray can be further improved by doing hyperparameter tunning and by employing more shophisticated network architecture with a large dataset.**
 
 
 ## Model Deployment
 
-Here is the Flask App : [Document Categorizer App](https://bangla-document-categorization.herokuapp.com/)
+Here is the developed Flask App : [Document Categorizer App](https://bangla-document-categorization.herokuapp.com/)
