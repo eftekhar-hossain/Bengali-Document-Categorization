@@ -59,3 +59,6 @@ In this devloped model we have got **`84%`** validation accuracy which is not ba
 ## Model Deployment
 
 Here is the developed Flask App : [Document Categorizer App](https://bangla-document-categorization.herokuapp.com/)
+
+
+![app](/images/app_interface.PNG)
